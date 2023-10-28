@@ -50,6 +50,8 @@ class MapBloc extends Bloc<MapEvent, MapState> {
     });
   }
 
+  //  ** Initialize the MapController
+
   void _onInitMap(OnMapInitializedEvent event, Emitter<MapState> emit) {
     _mapController = event.controller;
     emit(state.copyWith(isMapInitialized: true));
@@ -115,10 +117,14 @@ class MapBloc extends Bloc<MapEvent, MapState> {
     _mapController?.showMarkerInfoWindow(const MarkerId('end'));
   }
 
+  // ** Function to move the camera positioned
+
   void moveCamera(LatLng newLocation) {
     final cameraUpdate = CameraUpdate.newLatLngZoom(newLocation, 17);
     _mapController?.animateCamera(cameraUpdate);
   }
+
+  // ** Start Following User Event
 
   void startFollowingUser() {
     add(OnStartFolloUserEvent());

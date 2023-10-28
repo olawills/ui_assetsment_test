@@ -53,6 +53,7 @@ class GpsBloc extends Bloc<GpsEvent, GpsState> {
     });
     return isEnable;
   }
+  // ** This Function checks for if a user has grant permission to use location 
 
   Future<void> askGpsAccess() async {
     final status = await Permission.location.request();

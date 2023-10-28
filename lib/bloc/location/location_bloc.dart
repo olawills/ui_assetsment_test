@@ -30,12 +30,15 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     });
   }
 
+  // ** Asynchronous Function to get the User current Position
+
   Future getCurrentPosition() async {
     if (_gpsBloc.state.isAllGranted) return;
     final position = await Geolocator.getCurrentPosition();
     add(OnNewUserLocationEvent(LatLng(position.latitude, position.longitude)));
   }
 
+  //  ** Function to get the LocationStream and listen to any change in event
   void startFollowingUser() {
     if (_gpsBloc.state.isAllGranted) return;
     add(OnStartFollowingUserEvent());
