@@ -10,6 +10,8 @@ The Project used Flutter Bloc as the state management solution to manage, contro
 - apk/app-arm64.apk (for android 10)
 - apk/app-realearmeabi-v7a.apk (for android 11 and above)
 - apk/app-x86_64-release.apk (for android 8-9 below)
+- https://drive.google.com/drive/folders/1eqkG4_jdu-YkU2yUbQU1t405PDb2demy?usp=sharing
+
 
 Features
 - A two Page UI
